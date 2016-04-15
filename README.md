@@ -17,7 +17,10 @@ Currently, the catalog includes archives of the following data sources:
  * ELCD 3.2, via their [downloadable ILCD archive](http://eplca.jrc.ec.europa.eu/ELCD3/datasetDownload.xhtml)
  
 Current plans include indexing the 2016 versions of GaBi Professional, GaBi Lean, and all 15-odd extension databases.  Others may come soon.
- 
+
+## How do I use it?
+
+The python programming language makes it very easy to work with JSON data.  For a simple example of something useful to do, see [this notebook](https://github.com/bkuczenski/lca-tools/blob/master/doc/Count%20outflows%20in%20GaBi.ipynb).
 
 # Data Model
 
