@@ -1,11 +1,23 @@
 # lca-tools-datafiles
 Files that describe available LCA data resources
 
-# What is this about?
+## What is this about?
 
 This is a repository for storing _catalogs_ of life cycle inventory (LCI) data used for preparing life cycle assessment (LCA) studies.  The catalogs are meant to describe the _semantic_ content of the databases, as well as the network structure, without describing the _quantitative_ information.  In other words, the catalogs include exchanges but not exchange values.
 
 All the catalogs here are generated from publicly available databases using the [lcatools](http://github.com/bkuczenski/lca-tools/) python package (not yet registered anywhere!)
+
+## What Databases are listed?
+
+Currently, the catalog includes archives of the following data sources:
+
+ * US LCI, via Ecospold v1 archive downloaded from [the LCA Commons](http://lcacommons.gov/nrel);
+ * Ecoinvent v3.2 (four different system models), via the "activity overview" spreadsheets available on [the Ecoinvent website](http://www.ecoinvent.org/support/documents-and-files/information-on-ecoinvent-3/information-on-ecoinvent-3.html);
+ * GaBi Professional database (2014), via their [web-based ILCD archive](http://www.gabi-software.com/support/gabi/gabi-database-2014-lci-documentation/professional-database-2014);
+ * ELCD 3.2, via their [downloadable ILCD archive](http://eplca.jrc.ec.europa.eu/ELCD3/datasetDownload.xhtml)
+ 
+Current plans include indexing the 2016 versions of GaBi Professional, GaBi Lean, and all 15-odd extension databases.  Others may come soon.
+ 
 
 # Data Model
 
@@ -25,7 +37,7 @@ Each entity has **three** required fields:
  * a `flow` has a reference `quantity`
  * a `process` has a reference `exchange`.
  
-Strictly speaking, the reference object is allowed to be `None` | `null` | empty.
+Although Strictly speaking the reference object is supposed to be required, in practice the reference object is allowed to be `None`/ `null` / empty.
  
 In addition to the mandatory fields, each entity has an unbounded collection of `tags` which can be any text-based or numeric content that describes the entity.  **No tags are required** but some are very useful and common:
 
@@ -37,7 +49,7 @@ In addition to the mandatory fields, each entity has an unbounded collection of 
  
 Entities can also have any other tag.  The tags are meant to be fodder for search.
 
-# JSON Archives
+## JSON Archives
 
 This repository contains archives and catalogs formatted as [[JSON]].  The JSON archivs have the following structure:
 
