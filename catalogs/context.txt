@@ -1,0 +1,176 @@
+JSON-LD context document
+
+Some concrete semantic references:
+
+http://descartes-core.org/ontologies/lca/1.0/stscope.owl
+http://descartes-core.org/ontologies/lca/1.0/LCAPattern.owl
+
+Entity types defined:
+
+process
+flow
+quantity
+
+Relations and properties:
+
+(process) -hasInput-> (flow)
+(process) -hasOutput-> (flow)
+
+(process) -hasReferenceFlow-> (flow)
+(process):referenceDirection = Input or Output
+
+(process) -SpatialScope-> {{stscope}}
+(process) -TemporalScope-> {{stscope}}
+
+(process):other properties ... -> to external vocabularies
+
+(flow) -hasReferenceQuantity-> (quantity)
+(flow) -Compartment-> {{compartment?}}
+
+(flow):other properties ... -> to external vocabularies
+
+(quantity) -Unit-> {{unit?}}
+
+
+
+
+The purpose of the catalog is to provide straightforward access to the semantic content of a life cycle inventory database, made up of collections of FLOWS, PROCESSES, and QUANTITIES.  It accomplishes this by making a record of OBSERVATIONS that can be attributed to a particular data source.  These observations are EXCHANGES and CHARACTERIZATIONS.  the current catalogs only store exchanges (but the ecoinvent LCIA characterization can be added)
+
+the catalog provides an index of instances of flows, properties, and quantities that were found in a particular database, and provides a set of properties to describe them.
+
+The catalog is meant to dereference queries about exchange relationships, in which flows are inputs or outputs of processes, and flows have magnitudes or measures with respect to quantities.
+
+exchanges are *observations* or observed process-flow relationships. The true purpose of the catalog is to organize these relationships and use them to build models.  The dataSourceReference and dataSourceType (in principle) allow the user to dereference their queries to a particular data provider. This can be used e.g. in a provenance trace.
+
+The actual observed value of the exchange or characterization factor is not published in the catalog, though it may be stored locally
+
+Some sample queries:
+ (of an exchange collection) find flows or processes that mention truck OR lorry
+
+ (selecting a particular exchange) processes with <exchange:flow>=theflow and  <exchange:direction>=[Input|Output]
+
+ (of an exchange): find terminations e.g. find complementary exchanges;
+     		   find terminations in catalog C / search for terminations ..
+
+ (of a process) list all exchanges; find/list flows that have no terminations
+
+ (of a flow) find processes listing flow as an input
+
+ inspect a process, flow, quantity record- retrieve reference document
+
+ (of a collection of exchanges) find internal flows: find flows that have terminations ie 1+ input and output
+
+
+
+
+
+Essential characteristics:
+
+process / flow / quantity / identifying characteristics:
+
+-entityType : 'process' | 'flow' | 'quantity' 
+-entityID --> IRI of entity base/[entityType?]/entityId
+-reference<entitytype> IRI of flow or quantity or unit string [ or ref ]
+
+- processes also must have a referenceDirection of Input or Output--
+  -- in the current file it is "<direction>: <flow-ref>" but maybe it should be two fields 
+
+and that's it.
+
+Entity properties-- 'tags'-- everything else
+
+
+the set of properties is short but open-ended. These are the things that should be linked to external definitions. "In the wild" these should be able to be contributed + discovered.
+
+Properties defined in the current catalog:
+
+ * Every data set has a 'Name'
+ * Every data set has a 'Comment' - though it may be empty
+
+ * Every data set has an 'origin'- the dataSourceReference where the data set came from
+
+ * GaBi extension entities have 'CatalogName'
+ 
+Flows:
+
+ = have mandatory Compartment- which awaits formalization
+
+aside from that:
+
+ 'CasNumber', 
+ 'Formula', 
+ 'Synonyms' 
+
+Processes:
+ = have mandatory SpatialScope and a TemporalScope - these should surely be formalized as something- Yan 2015 or ?
+
+
+
+ 'CatalogName',   
+ 'Classifications',
+ 'IsicClass',
+ 'IsicNumber',
+ 'TechnologyLevel'
+
+Quantities:
+nothing here
+
+ 'UnitConversion'
+
+
+
+
+Exchanges aren't entities- they express the relations 'hasInput' or 'hasOutput' as defined in e.g. Jano 2015 
+process -> hasInput -> flow
+process -> hasOutput -> flow
+
+
+
+
+Units--
+
+Units are not defined inside the tool except as short text strings, generally (ILCD archives resolve to unitgroups)
+the units should be linked to external semantic references
+
+they should be listed here:
+
+
+Quantities having the following unit string are probably the named quantities:
+
+{
+ 'Bq', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#Activity
+ 'EUR2005', https://schema.org/PriceSpecification
+ 'Item(s)', https://schema.org/numberOfItems
+ 'MJ', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#EnergyAndWork
+ 'USD', https://schema.org/PriceSpecification
+ 'a', * ambiguous - could be area or time (annum) *
+ 'h', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#Time
+ 'ha', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#Area
+ 'hour', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#Time
+ 'kBq', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#Activity
+ 'kWh', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#EnergyAndWork
+ 'kg', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#Mass
+ 'kg*day', * new quantity ??? *
+ 'kg*km', * new quantity Freight *
+ 'kgkm', * new quantity Freight *
+ 'km', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#Length
+ 'km*year', * new quantity ??? *
+ 'l', * ambiguous- could be volume or Standard Volume or Normal volume *
+ 'm', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#Length
+ 'm*year', * new quantity ??? *
+ 'm2', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#Area
+ 'm2*a', * new quantity occupation of area *
+ 'm2*year', * new quantity occupation of area *
+ 'm3', * ambiguous - could be volume or Standard Volume or Normal volume *
+ 'm3*year', * new quantity occupation of volume *
+ 'metric ton*km', * new quantity freight *
+ 'p*km', * new quantity person-kilometer *
+ 'person*km', * new quantity person-kilometer *
+ 'pkm', * new quantity person-kilometer *
+ 'sh tn', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#Mass
+ 't', http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#Mass
+ 't*km', * new quantity freight *
+ 'tkm', * new quantity freight *
+ 'unit' https://schema.org/numberOfItems
+}
+

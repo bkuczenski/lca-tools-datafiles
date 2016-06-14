@@ -1,0 +1,68 @@
+{
+  "@context":
+  {
+    "@base": "http://savanna.geog.ucsb.edu/LCA/",
+    "prop": "http://savanna.geog.ucsb.edu/LCA/Property/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcterms": "http://purl.org/dcterms#",
+    "qudt": "http://www.qudt.org/qudt/owl/1.0.0/qudt#",
+    
+   	"Name" : "rdfs:label",
+    "Comment" : "rdfs:comment",
+
+    "lcaCatalog":
+    {
+      "@id": "prop:lcaCatalog",
+      "@type": "dc:title"
+    },
+    "dataSourceReference":
+    {
+      "@id": "prop:dataSourceReference",
+      "@type": "prov:hadPrimarySource"
+    },
+    "dataSourceType": "prop:dataSourceType",
+    
+    "entity": "void:Dataset",
+    "referenceEntity": "prop:referenceEntity",
+    "flow": "http://savanna.geog.ucsb.edu/LCA/Flow",
+    "process": "http://savanna.geog.ucsb.edu/LCA/Process",
+    "quantity": "http://savanna.geog.ucsb.edu/LCA/Quantity",
+    "exchange": "http://savanna.geog.ucsb.edu/LCA/Exchange",
+    
+    "entityId": { "@id": "entity", "@type": "@id" },
+    "entityType": {"@id": "prop:entityType", "@type": "prop:entityType" },
+    
+    "origin": { "@id": "prop:origin", "@type": "dcterms:source"},
+    "externalId": {"@id": "prop:externalId", "@type": "prov:wasDerivedFrom" },
+    
+    "referenceQuantity": {"@id": "referenceEntity", "@type": "quantity"},
+    "referenceExchange": {"@id": "referenceEntity", "@type": "exchange"},
+	"referenceUnit": {"@id": "referenceEntity", "@type": "qudt:Unit"},
+    
+	"flows": { "@id": "http://savanna.geog.ucsb.edu/LCA/FlowContainer", "@container" : "@set"},
+	"processes": { "@id": "http://savanna.geog.ucsb.edu/LCA/ProcessContainer", "@container" : "@set"},
+	"quantities": { "@id": "http://savanna.geog.ucsb.edu/LCA/QuantityContainer", "@container" : "@set"},
+    
+    "Compartment": { "@id": "prop:compartment", "@container": "@list"},
+    
+    "SpatialScope": "rdfs:place",
+    "TemporalScope": { "@id": "prop:temporalScope", "@container": "@index"}
+
+  },
+  "lcaCatalog": "Ecoinvent v3.2 APOS",
+  "dataSourceReference": "/path/to/my/ecoinvent-v3.2-apos.xlsx",
+  "dataSourceType": "EcoinventSpreadsheet",
+  "flows":
+  [
+    {
+      "entityId": "008e406f-97a7-4823-a68d-0bd2c415ee72",
+      "Name": "Cold Rolling Sludge",
+      "Comment": "",
+      "entityType": "flow",
+      "externalId": "flows/008e406f-97a7-4823-a68d-0bd2c415ee72",
+      "origin": "/home/b/Dropbox/data/ELCD/ELCD3.2.zip",
+      "referenceQuantity": "93a60a56-a3c8-11da-a746-0800200b9a66"
+      
+    }
+  ]
+}
