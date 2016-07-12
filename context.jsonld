@@ -1,7 +1,7 @@
 {
   "@context":
   {
-    "@base": "http://savanna.geog.ucsb.edu/LCA/",
+    "@base": "http://bkuczenski.github.io/lca-tools-datafiles/LCA/",
     "prop": "http://savanna.geog.ucsb.edu/LCA/Property/",
     "prov": "http://www.w3.org/ns/prov#",
     "dcterms": "http://purl.org/dcterms#",
