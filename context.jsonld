@@ -9,7 +9,7 @@
     "qudt": "http://www.qudt.org/qudt/owl/1.0.0/qudt#",
     "lca": "http://descartes-core.org/ontologies/lca/1.0/LCAPattern.owl#",
     "stscope": "http://descartes-core.org/ontologies/lca/1.0/stscope.owl#",
-    "olca": "http://greendelta.github.io/olca-schema/html/",
+    "olca": "http://greendelta.github.io/olca-schema/",
     
     "Name" : "rdfs:label",
     "Comment" : "rdfs:comment",
