@@ -2,7 +2,8 @@
   "@context":
   {
     "@base": "http://bkuczenski.github.io/lca-tools-datafiles/LCA/",
-    "prop": "http://savanna.geog.ucsb.edu/LCA/Property/",
+    "entity": "http://bkuczenski.github.io/lca-tools-datafiles/LCA/",
+    "prop": "http://bkuczenski.github.io/lca-tools-datafiles/LCA/property/",
     "prov": "http://www.w3.org/ns/prov#",
     "dcterms": "http://purl.org/dcterms#",
     "qudt": "http://www.qudt.org/qudt/owl/1.0.0/qudt#",
@@ -30,9 +31,8 @@
     "entityType": "prop:entityType",
     "origin": { "@id": "prop:origin", "@type": "dcterms:source"},
     "externalId": {"@id": "prop:externalId", "@type": "prov:wasDerivedFrom" },
-    "isReference": "prop:isReference", 
 
-    "flow": "lca:Flow",
+    "flow": { "@id": "lca:Flow", "@type": "@id" },
     "flows": { "@id": "flow", "@container" : "@set"},
 
     "Compartment": { "@id": "lca:hasCompartment", "@container": "@list"},
@@ -40,20 +40,26 @@
     "characterizations": { "@id": "prop:Characterization", "@container": "@set" },
     "Formula": { "@id": "prop:hasFormula", "@type": "olca:Flow/formula" },
 
-    "process": "lca:Activity",
+    "process": { "@id": "lca:Activity", "@type": "@id" },
     "processes": { "@id": "process", "@container" : "@set"},
+    "exchanges": { "@id": "prop:Exchange", "@container": "@set" },
+    "direction": "prop:Direction",
 
+    "Classifications": { "@id": "prop:hasClassification", "@container": "@list"},
     "SpatialScope": { "@id": "stscope:scopedByPlace", "@type": "rdfs:place" },
     "TemporalScope": { "@id": "stscope:scopedByTime", "@container": "@index"},
 
-    "quantity": { "@id": "prop:hasCharacterizationQuantity", "@type": "@id" }, 
+    "quantity": { "@id": "entity:Quantity", "@type": "@id" },
     "quantities": { "@id": "quantity", "@container" : "@set"},
     
+    "isReference": "prop:isReference",
     "referenceUnit": { "@id": "prop:hasUnit", "@type": "qudt:Unit"},
-    
+   
     "Indicator": { "@id": "prop:hasLciaIndicator", "@type": "prop:Indicator" },
     "Method": { "@id": "prop:isLciaMethod", "@type": "prop:LciaMethod" },
-    "Category": { "@id": "prop:isInLciaImpactCategory", "@type": "pro:LciaImpactCategory" }
-    
+    "Category": { "@id": "prop:isInLciaImpactCategory", "@type": "pro:LciaImpactCategory" },
+
+    "value": "prop:Value"
+
   }
 }
