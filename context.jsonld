@@ -25,12 +25,12 @@
     },
     "dataSourceType": "prop:dataSourceType",
     
-    "entity": "void:Dataset",
     "referenceEntity": "prop:referenceEntity",
-    "entityId": { "@id": "entity", "@type": "@id" },
-    "entityType": {"@id": "prop:entityType", "@type": "prop:entityType" },
+    "entityId": "@id",
+    "entityType": "prop:entityType",
     "origin": { "@id": "prop:origin", "@type": "dcterms:source"},
     "externalId": {"@id": "prop:externalId", "@type": "prov:wasDerivedFrom" },
+    "isReference": "prop:isReference", 
 
     "flow": "lca:Flow",
     "flows": { "@id": "flow", "@container" : "@set"},
@@ -46,10 +46,10 @@
     "SpatialScope": { "@id": "stscope:scopedByPlace", "@type": "rdfs:place" },
     "TemporalScope": { "@id": "stscope:scopedByTime", "@container": "@index"},
 
-    "quantity": "prop:Quantity",
+    "quantity": { "@id": "prop:hasCharacterizationQuantity", "@type": "@id" }, 
     "quantities": { "@id": "quantity", "@container" : "@set"},
     
-    "referenceUnit": { "@id": "entity", "@type": "qudt:Unit"},
+    "referenceUnit": { "@id": "prop:hasUnit", "@type": "qudt:Unit"},
     
     "Indicator": { "@id": "prop:hasLciaIndicator", "@type": "prop:Indicator" },
     "Method": { "@id": "prop:isLciaMethod", "@type": "prop:LciaMethod" },
