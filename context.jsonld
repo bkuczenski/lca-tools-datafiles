@@ -1,8 +1,7 @@
 {
   "@context":
   {
-    "@base": "http://bkuczenski.github.io/lca-tools-datafiles/LCA/",
-    "entity": "http://bkuczenski.github.io/lca-tools-datafiles/LCA/",
+    "entity": "http://bkuczenski.github.io/lca-tools-datafiles/LCA/class/",
     "prop": "http://bkuczenski.github.io/lca-tools-datafiles/LCA/property/",
     "prov": "http://www.w3.org/ns/prov#",
     "dcterms": "http://purl.org/dcterms#",
@@ -10,6 +9,8 @@
     "lca": "http://descartes-core.org/ontologies/lca/1.0/LCAPattern.owl#",
     "stscope": "http://descartes-core.org/ontologies/lca/1.0/stscope.owl#",
     "olca": "http://greendelta.github.io/olca-schema/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
     
     "Name" : "rdfs:label",
     "Comment" : "rdfs:comment",
@@ -19,45 +20,42 @@
       "@id": "prop:lcaCatalog",
       "@type": "dc:title"
     },
-    "dataSourceReference":
-    {
-      "@id": "prop:dataSourceReference",
-      "@type": "prov:hadPrimarySource"
-    },
+    "dataSourceReference": "prov:hadPrimarySource",
     "dataSourceType": "prop:dataSourceType",
     
-    "referenceEntity": "prop:referenceEntity",
     "entityId": "@id",
     "entityType": "prop:entityType",
-    "origin": { "@id": "prop:origin", "@type": "dcterms:source"},
-    "externalId": {"@id": "prop:externalId", "@type": "prov:wasDerivedFrom" },
+    "origin": "dcterms:source",
+    "externalId": "prov:wasDerivedFrom",
 
     "flow": { "@id": "lca:Flow", "@type": "@id" },
     "flows": { "@id": "flow", "@container" : "@set"},
 
     "Compartment": { "@id": "lca:hasCompartment", "@container": "@list"},
-    "CasNumber": { "@id": "prop:hasCasNumber", "@type": "olca:Flow/cas" },
+    "CasNumber": "olca:Flow/cas",
     "characterizations": { "@id": "prop:Characterization", "@container": "@set" },
-    "Formula": { "@id": "prop:hasFormula", "@type": "olca:Flow/formula" },
+    "Formula": "olca:Flow/formula",
 
     "process": { "@id": "lca:Activity", "@type": "@id" },
     "processes": { "@id": "process", "@container" : "@set"},
-    "exchanges": { "@id": "prop:Exchange", "@container": "@set" },
+    "exchanges": { "@id": "olca:Exchange", "@container": "@set" },
     "direction": "prop:Direction",
 
     "Classifications": { "@id": "prop:hasClassification", "@container": "@list"},
-    "SpatialScope": { "@id": "stscope:scopedByPlace", "@type": "rdfs:place" },
-    "TemporalScope": { "@id": "stscope:scopedByTime", "@container": "@index"},
+    "SpatialScope": "stscope:scopedByPlace",
+    "TemporalScope": "stscope:scopedByTime",
+    "begin": "schema:validFrom",
+    "end": "schema:validThrough",
 
     "quantity": { "@id": "entity:Quantity", "@type": "@id" },
     "quantities": { "@id": "quantity", "@container" : "@set"},
     
     "isReference": "prop:isReference",
-    "referenceUnit": { "@id": "prop:hasUnit", "@type": "qudt:Unit"},
+    "referenceUnit": "qudt:Unit",
    
-    "Indicator": { "@id": "prop:hasLciaIndicator", "@type": "prop:Indicator" },
-    "Method": { "@id": "prop:isLciaMethod", "@type": "prop:LciaMethod" },
-    "Category": { "@id": "prop:isInLciaImpactCategory", "@type": "pro:LciaImpactCategory" },
+    "Indicator": "prop:ImpactCategoryIndicator",
+    "Method": "olca:ImpactMethod",
+    "Category": "olca:ImpactCategory",
 
     "value": "prop:Value"
 
