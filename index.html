@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Lca-tools-datafiles : Files that describe available LCA data resources">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Lca-tools-datafiles</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/bkuczenski/lca-tools-datafiles">View on GitHub</a>
+
+          <h1 id="project_title">Lca-tools-datafiles</h1>
+          <h2 id="project_tagline">Files that describe available LCA data resources</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/bkuczenski/lca-tools-datafiles/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/bkuczenski/lca-tools-datafiles/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a id="semantic-catalogs-of-lca-data" class="anchor" href="#semantic-catalogs-of-lca-data" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Semantic Catalogs of LCA Data</h3>
+
+<p>This repository stores a collection of <a href="http://linkeddatabook.com/editions/1.0/">linked-data</a> <a href="https://github.com/bkuczenski/lca-tools-datafiles/tree/master/catalogs">catalogs</a> that describe several LCA data sources in a common format.  The catalogs distinguish between "semantic" content, or information that carries meaning and must be interpreted, and "quantitative" content, or numerical data values that are necessary to perform LCA computations.  In between is "structured" content, which shows the existence of relationships between entities without including quantitative aspects of those relationships.</p>
+
+<p>Semantic data include names, classifications, categories, units of measurement, spatial and temporal scopes, and so on.  The figure below shows the principal entity types included in the catalog:</p>
+
+<ul>
+<li>
+<strong>Flows</strong> are the basic substances, products, services, or other observable phenomena that are the accounting elements of industrial ecology;</li>
+<li>
+<strong>Quantities</strong> are extensive properties of flows that can be measured, including both "flow properties" and environmental impact characterization factors;</li>
+<li>
+<strong>Activities</strong> are things that happen to flows, to transform inputs into outputs. A <em>process</em> is a particular instance of an activity that occurred at a particular place and time, and whose characteristics were observed and recorded.</li>
+</ul>
+
+<p>The structural information in the catalogs includes:</p>
+
+<ul>
+<li>
+<strong>exchanges</strong>, which are observations that a particular flow was an input or output of a particular process;</li>
+<li>
+<strong>characterizations</strong>, which are observations that a particular flow can be measured in terms of a particular quantity.</li>
+</ul>
+
+<p><img src="https://github.com/bkuczenski/lca-tools-datafiles/raw/master/img/lca-model.png" alt="Minimal LCA Linked Data model"></p>
+
+<p>Quantitative data in LCA <em>strictly</em> pertain to flows, since only flows have measurable extent.  There are two types of quantitative data, corresponding to the two types of structural information:</p>
+
+<ul>
+<li>
+<strong>Exchange values</strong> report the magnitude of one flow exchanged through a process, in comparison to a unit amount of a reference exchange;</li>
+<li>
+<strong>Characterization factors</strong> report the magnitude of one quantity of a flow in comparison to a unit amount of a reference quantity.</li>
+</ul>
+
+<p>For data sources that are free, including USLCI and ELCD, the catalogs include the semantic, structural, and quantitative data (i.e. processes include lists of exchanges, and those exchanges include values).</p>
+
+<p>For data sources that are not free, including the GaBi professional database and extensions, and the Ecoinvent database, the catalogs include only the semantic information and partial structural information (a listing of reference exchanges or characterizations). They exclude non-reference exchanges and characterizations, and exclude all exchange values and characterization factors.</p>
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>The catalogs were produced in connection with a manuscript under review at the Journal of Cleaner Production, authored by Brandon Kuczenski (<a href="mailto:bkuczenski@ucsb.edu">bkuczenski@ucsb.edu</a>), Christopher B. Davis (TU Groningen), Beatriz Rivela (Inviable.es), and Krzysztof Janowicz (UCSB Department of Geography).</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Lca-tools-datafiles maintained by <a href="https://github.com/bkuczenski">bkuczenski</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
