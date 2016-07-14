@@ -1,0 +1,102 @@
+{
+  "@context": "http://bkuczenski.github.io/lca-tools-datafiles/context.jsonld",
+  "catalogNames": {},
+  "dataSourceReference": "/home/b/Dropbox/data/Ecoinvent/3.2/activity_overview_for_users_3.2_apos.xlsx",
+  "dataSourceType": "EcoinventSpreadsheet",
+  "flows": [
+    {
+      "CasNumber": "007440-48-4",
+      "Comment": "",
+      "Compartment": [
+        "natural resource",
+        "in ground"
+      ],
+      "Formula": "",
+      "Name": "Cobalt, Co 5.0E-2%, in mixed ore, in ground",
+      "Synonyms": "",
+      "characterizations": [
+        {
+          "isReference": true,
+          "quantity": "a6f890e7-2633-39da-8e99-e39791096af6"
+        }
+      ],
+      "entityId": "0014c957-8a79-379d-aaf3-7e6d1709f442",
+      "entityType": "flow",
+      "externalId": "Cobalt, Co 5.0E-2%, in mixed ore, in ground [natural resource, in ground]",
+      "origin": "/home/b/Dropbox/data/Ecoinvent/3.2/activity_overview_for_users_3.2_undefined.xlsx"
+    }
+  ],
+  "processes": [
+    {
+      "Classifications": [
+        "Energy carriers and technologies",
+        "Electricity"
+      ],
+      "Comment": "Good overall data quality. Energy carrier mix information based on official statistical information including import/export. Detailed\n        power plant models were used, which combine measured emissions plus calculated values for not measured emissions of e.g. organics or heavy metals. Energy carrier extraction\n        and processing data is of sufficient to good (e.g. refinery) data quality. Inventory is partly based on primary industry data, partly on secondary literature\n        data.",
+      "Name": "Electricity Mix",
+      "SpatialScope": "GB",
+      "TemporalScope": {
+        "begin": "2002",
+        "end": "2010"
+      },
+      "entityId": "00043bd2-4563-4d73-8df8-b84b5d8902fc",
+      "entityType": "process",
+      "exchanges": [
+        {
+          "direction": "Input",
+          "flow": "041f5cea-6556-11dd-ad8b-0800200c9a66",
+          "value": 7.11042181116546e-12
+        },
+        {
+          "direction": "Input",
+          "flow": "041fab30-6556-11dd-ad8b-0800200c9a66",
+          "value": 9.32901767018938e-13
+        },
+        {
+          "direction": "Output",
+          "flow": "4f19a2f2-7b3b-11dd-ad8b-0800200c9a66",
+          "isReference": true,
+          "value": 3.6
+        }
+      ],
+      "externalId": "processes/00043bd2-4563-4d73-8df8-b84b5d8902fc",
+      "origin": "/home/b/Dropbox/data/ELCD/ELCD3.2.zip"
+    }
+  ],
+  "quantities": [
+    {
+      "Comment": "",
+      "Name": "Energy ren. (gross calorific value)",
+      "UnitConversion": {
+        "GJ": 0.001,
+        "J": 1000000,
+        "MJ": 1,
+        "MWh": 0.0002777777777777778,
+        "TCE": 0.00003412084237535657,
+        "TOE": 0.000023884589662749594,
+        "btu": 947.8169879134379,
+        "kWh": 0.2777777777777778,
+        "kcal": 238.85160149998808
+      },
+      "entityId": "014853f4-1e82-4de3-8f99-f71ae9a50280",
+      "entityType": "quantity",
+      "externalId": "flowproperties/014853f4-1e82-4de3-8f99-f71ae9a50280",
+      "origin": "/home/b/Dropbox/data/ELCD/ELCD3.2.zip",
+      "referenceUnit": "unitgroups/93a60a57-a3c8-11da-a746-0800200c9a66"
+    },
+    {
+      "Category": "Non-cancer human health effects",
+      "Comment": "USEtox consensus model (multimedia model). No spatial differentiation beyond continent and world compartments. Specific groups of chemicals requires further works (cf. details in other sections).",
+      "Duration": "Indefinite",
+      "Indicator": "Comparative Toxic Unit for human (CTUh)expressing the estimated increase in morbidity in the total human population per unit mass of a chemical emitted (cases per kilogramme).",
+      "Method": "ILCD2011",
+      "Name": "ILCD2011; Non-cancer human health effects; midpoint; CTUh; USEtox",
+      "ReferenceYear": "time independent",
+      "entityId": "324d2515-5985-4563-87d8-f59053db774d",
+      "entityType": "quantity",
+      "externalId": "LCIAmethods/324d2515-5985-4563-87d8-f59053db774d",
+      "origin": "/home/b/Dropbox/data/ELCD/ELCD3.2.zip",
+      "referenceUnit": "unitgroups/5beb6eed-33a9-47b8-9ede-1dfe8f679159"
+    }
+  ]
+}

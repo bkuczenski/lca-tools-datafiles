@@ -55,7 +55,7 @@
     
     "isReference": "prop:isReference",
     "referenceUnit": "qudt:Unit",
-   
+    
     "Indicator": "prop:ImpactCategoryIndicator",
     "Method": "olca:ImpactMethod",
     "Category": "olca:ImpactCategory",
