@@ -1,14 +1,17 @@
 {
   "@context":
   {
-    "entity": "http://bkuczenski.github.io/lca-tools-datafiles/LCA/class/",
-    "prop": "http://bkuczenski.github.io/lca-tools-datafiles/LCA/property/",
-    "prov": "http://www.w3.org/ns/prov#",
-    "dcterms": "http://purl.org/dcterms#",
-    "qudt": "http://www.qudt.org/qudt/owl/1.0.0/qudt#",
+    "entity": "http://openlca.org/schema/v1.0/contrib/class/",
+    "prop": "http://openlca.org/schema/v1.0/contrib/property/",
+
     "lca": "http://descartes-core.org/ontologies/lca/1.0/LCAPattern.owl#",
     "stscope": "http://descartes-core.org/ontologies/lca/1.0/stscope.owl#",
+
     "olca": "http://greendelta.github.io/olca-schema/",
+    "qudt": "http://www.qudt.org/qudt/owl/1.0.0/qudt#",
+
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcterms": "http://purl.org/dcterms#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "schema": "http://schema.org/",
     
@@ -24,11 +27,11 @@
     "dataSourceType": "prop:dataSourceType",
     
     "entityId": "@id",
-    "entityType": "prop:entityType",
+    "entityType": "@type",
     "origin": "dcterms:source",
     "externalId": "prov:wasDerivedFrom",
 
-    "flow": { "@id": "lca:Flow", "@type": "@id" },
+    "flow": { "@id": "olca:Flow", "@type": "@id" },
     "flows": { "@id": "flow", "@container" : "@set"},
 
     "Compartment": { "@id": "lca:hasCompartment", "@container": "@list"},
@@ -36,7 +39,7 @@
     "characterizations": { "@id": "prop:Characterization", "@container": "@set" },
     "Formula": "olca:Flow/formula",
 
-    "process": { "@id": "lca:Activity", "@type": "@id" },
+    "process": { "@id": "olca:Process", "@type": "@id" },
     "processes": { "@id": "process", "@container" : "@set"},
     "exchanges": { "@id": "olca:Exchange", "@container": "@set" },
     "direction": "prop:Direction",
