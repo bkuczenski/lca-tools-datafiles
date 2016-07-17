@@ -35,14 +35,16 @@
     "flow": { "@id": "olca:Flow", "@type": "@id" },
     "flows": { "@id": "flow", "@container" : "@set"},
 
-    "Compartment": { "@id": "lca:hasCompartment", "@container": "@list", "@type": "lca:Compartment" },
+    "Compartment": { "@id": "lca:hasCompartment", "@container": "@list" },
     "CasNumber": "olca:Flow/cas",
+    "characterization": "entity:characterization",
     "characterizations": { "@id": "prop:Characterization", "@container": "@set" },
     "Formula": "olca:Flow/formula",
 
     "process": { "@id": "olca:Process", "@type": "@id" },
     "processes": { "@id": "process", "@container" : "@set"},
-    "exchanges": { "@id": "olca:hasExchange", "@container": "@set", "@type": "olca:Exchange" },
+    "exchange": "olca:Exchange",
+    "exchanges": { "@id": "olca:hasExchange", "@container": "@set" },
     "direction": "prop:Direction",
 
     "Classifications": { "@id": "prop:hasClassification", "@container": "@list"},
