@@ -16,6 +16,7 @@
       "Synonyms": "",
       "characterizations": [
         {
+	  "entityType": "characterization",
           "isReference": true,
           "quantity": "a6f890e7-2633-39da-8e99-e39791096af6"
         }
@@ -44,16 +45,19 @@
       "exchanges": [
         {
           "direction": "Input",
+	  "entityType": "exchange",
           "flow": "041f5cea-6556-11dd-ad8b-0800200c9a66",
           "value": 7.11042181116546e-12
         },
         {
           "direction": "Input",
+	  "entityType": "exchange",
           "flow": "041fab30-6556-11dd-ad8b-0800200c9a66",
           "value": 9.32901767018938e-13
         },
         {
           "direction": "Output",
+	  "entityType": "exchange",
           "flow": "4f19a2f2-7b3b-11dd-ad8b-0800200c9a66",
           "isReference": true,
           "value": 3.6
