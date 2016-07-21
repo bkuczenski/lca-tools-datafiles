@@ -1,14 +1,15 @@
 {
   "@context":
   {
-    "entity": "http://openlca.org/schema/v1.0/contrib/class/",
-    "prop": "http://openlca.org/schema/v1.0/contrib/property/",
+    "olca": "http://openlca.org/schema/v1.0/",
+
+    "entity": "olca:contrib/class/",
+    "prop": "olca:contrib/property/",
 
     "lca": "http://descartes-core.org/ontologies/lca/1.0/LCAPattern.owl#",
     "stscope": "http://descartes-core.org/ontologies/lca/1.0/stscope.owl#",
     "ont": "http://www.co-ode.org/ontologies/ont.owl#",
 
-    "olca": "http://greendelta.github.io/olca-schema/",
     "qudt": "http://www.qudt.org/qudt/owl/1.0.0/qudt#",
 
     "prov": "http://www.w3.org/ns/prov#",
@@ -19,11 +20,8 @@
     "Name" : "rdfs:label",
     "Comment" : "rdfs:comment",
 
-    "lcaCatalog":
-    {
-      "@id": "prop:lcaCatalog",
-      "@type": "dc:title"
-    },
+    "lcaCatalog": "dcterms:title",
+
     "dataSourceReference": "prov:hadPrimarySource",
     "dataSourceType": "prop:dataSourceType",
     
@@ -38,7 +36,7 @@
     "Compartment": { "@id": "lca:hasCompartment", "@container": "@list" },
     "CasNumber": "olca:Flow/cas",
     "characterization": "entity:characterization",
-    "characterizations": { "@id": "prop:Characterization", "@container": "@set" },
+    "characterizations": { "@id": "prop:hasCharacterization", "@container": "@set" },
     "Formula": "olca:Flow/formula",
 
     "process": { "@id": "olca:Process", "@type": "@id" },
@@ -59,7 +57,7 @@
     "isReference": "prop:isReference",
     "referenceUnit": "qudt:Unit",
     
-    "Indicator": "prop:ImpactCategoryIndicator",
+    "Indicator": "entity:ImpactCategoryIndicator",
     "Method": "olca:ImpactMethod",
     "Category": "olca:ImpactCategory",
     
